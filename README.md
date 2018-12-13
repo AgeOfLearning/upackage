@@ -1,5 +1,11 @@
 # upackage
 
+[pypi-build-status]: https://img.shields.io/pypi/v/upackage.svg
+[travis-ci-status]: https://img.shields.io/travis/AgeOfLearning/upackage.svg
+
+[![pypi][pypi-build-status]](https://pypi.python.org/pypi/upackage)
+[![travis][travis-ci-status]](https://travis-ci.org/AgeOfLearning/upackage)
+
 ## About
 
 upackage is a python module for generating *.unitypackage from source assets without unity.
