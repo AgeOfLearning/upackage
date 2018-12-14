@@ -87,7 +87,9 @@ class UPackage:
                 if path_name_local.startswith(os.path.sep):
                     path_name_local = path_name_local.lstrip(os.path.sep)
 
+                # replace root path with unity relative to Assets/...
                 path_name_local = os.path.join(DEFAULT_UNITY_ROOT_PATH, local_basename, path_name_local)
+                path_name_local = path_name_local.replace("\\", "/")
 
                 if os.path.isdir(asset_dir):
                     rmtree(asset_dir)
