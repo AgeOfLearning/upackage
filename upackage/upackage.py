@@ -23,6 +23,10 @@ class UPackage:
     def _preprocess_files_in_path(asset_path):
         logging.info("Process files in directory: {0}".format(asset_path))
 
+        # Process root folder...
+        UPackage._process_file(asset_path)
+
+        # Process contents...
         for path in os.listdir(asset_path):
             full_path = os.path.join(asset_path, path)
 
@@ -71,10 +75,14 @@ class UPackage:
         return os.path.join(sd, UPackage.metafile_template_path)
 
     @staticmethod
+    def _get_asset_root_basename(assets_root):
+        return os.path.basename(assets_root)
+
+    @staticmethod
     def generate_package(assets_root, output_path, unity_root_path=DEFAULT_UNITY_ROOT_PATH):
         tmpdir = tempfile.mkdtemp()
         assets = UPackage._collect_assets_in_path(assets_root)
-        local_basename = os.path.basename(assets_root)
+        local_basename = UPackage._get_asset_root_basename(assets_root)
         temp_tar_path = os.path.join(tmpdir, "archtemp.tar")
 
         with tarfile.open(temp_tar_path, "w:gz") as tar:
@@ -97,7 +105,7 @@ class UPackage:
 
                 os.mkdir(asset_dir)
 
-                if os.path.isfile(asset['path']):
+                if not os.path.isdir(asset['path']):
                     # copy asset...
                     copyfile(asset['path'], asset_path)
 
@@ -118,6 +126,11 @@ class UPackage:
     def _collect_assets_in_path(asset_path):
         assets = []
 
+        asset_ref = UPackage._fetch_asset_reference(asset_path)
+        if asset_ref is not None:
+            logging.info("Adding asset ref: {0}".format(asset_ref))
+            assets.append(asset_ref)
+
         for path in os.listdir(asset_path):
             full_path = os.path.join(asset_path, path)
 
@@ -128,11 +141,6 @@ class UPackage:
                     assets.append(asset_ref)
 
             if os.path.isdir(full_path):
-                asset_ref = UPackage._fetch_asset_reference(full_path)
-                if asset_ref is not None:
-                    logging.info("Adding asset ref: {0}".format(asset_ref))
-                    assets.append(asset_ref)
-
                 sub_assets = UPackage._collect_assets_in_path(full_path)
                 for sub_asset in sub_assets:
                     assets.append(sub_asset)
