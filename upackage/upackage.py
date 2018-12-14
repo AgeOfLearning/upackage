@@ -43,8 +43,7 @@ class UPackage:
 
     @staticmethod
     def _get_asset_meta_path(file_path):
-        file_path_no_ext = UPackage._get_file_path_no_extensions(file_path)
-        return "{0}.meta".format(file_path_no_ext)
+        return "{0}.meta".format(file_path)
 
     @staticmethod
     def _process_file(file_path):
