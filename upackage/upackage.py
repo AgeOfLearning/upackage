@@ -75,8 +75,9 @@ class UPackage:
         tmpdir = tempfile.mkdtemp()
         assets = UPackage._collect_assets_in_path(assets_root)
         local_basename = os.path.basename(assets_root)
+        temp_tar_path = os.path.join(tmpdir, "archtemp.tar")
 
-        with tarfile.open(output_path, "w:gz") as tar:
+        with tarfile.open(temp_tar_path, "w:gz") as tar:
             for asset in assets:
                 asset_dir = os.path.join(tmpdir, asset['guid'])
                 asset_path = os.path.join(asset_dir, 'asset')
@@ -96,8 +97,9 @@ class UPackage:
 
                 os.mkdir(asset_dir)
 
-                # copy asset...
-                copyfile(asset['path'], asset_path)
+                if os.path.isfile(asset_path):
+                    # copy asset...
+                    copyfile(asset['path'], asset_path)
 
                 # copy meta...
                 copyfile(asset['meta_path'], meta_path)
@@ -108,6 +110,8 @@ class UPackage:
 
                 tar.add(asset_dir, arcname=asset['guid'])
 
+        # Windows unity expects archtemp.tar inside of *.unitypackage
+        copyfile(temp_tar_path, output_path)
 
 
     @staticmethod
@@ -124,6 +128,11 @@ class UPackage:
                     assets.append(asset_ref)
 
             if os.path.isdir(full_path):
+                asset_ref = UPackage._fetch_asset_reference(full_path)
+                if asset_ref is not None:
+                    logging.info("Adding asset ref: {0}".format(asset_ref))
+                    assets.append(asset_ref)
+
                 sub_assets = UPackage._collect_assets_in_path(full_path)
                 for sub_asset in sub_assets:
                     assets.append(sub_asset)
