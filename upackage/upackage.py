@@ -7,6 +7,7 @@ import tarfile
 import logging
 import re
 from shutil import copyfile
+from shutil import rmtree
 
 DEFAULT_UNITY_ROOT_PATH = "Assets/"
 
@@ -88,6 +89,9 @@ class UPackage:
                     path_name_local = path_name_local.lstrip(os.path.sep)
 
                 path_name_local = os.path.join(DEFAULT_UNITY_ROOT_PATH, local_basename, path_name_local)
+
+                if os.path.isdir(asset_dir):
+                    rmtree(asset_dir)
 
                 os.mkdir(asset_dir)
 
