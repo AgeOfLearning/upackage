@@ -97,7 +97,7 @@ class UPackage:
 
                 os.mkdir(asset_dir)
 
-                if os.path.isfile(asset_path):
+                if os.path.isfile(asset['path']):
                     # copy asset...
                     copyfile(asset['path'], asset_path)
 
