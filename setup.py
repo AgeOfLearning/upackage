@@ -15,8 +15,8 @@ setup_requirements = ["pytest-runner"]
 test_requirements = ["pytest"]
 
 setup(
-    author="Devon Klompmaker",
-    author_email='devon.klompmaker@aofl.com',
+    author="Age of Learning",
+    author_email='leonid.umanskiy@aofl.com',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
@@ -30,6 +30,11 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
     ],
+    entry_points={
+        'console_scripts': [
+            'upackage=upackage.__main__:main',
+        ],
+    },
     description="Generate .unitypackage without Unity.",
     install_requires=required,
     license="MIT",
@@ -43,6 +48,6 @@ setup(
     setup_requires=setup_requirements,
     tests_require=test_requirements,
     url='https://github.com/AgeOfLearning/upackage',
-    version='0.1.6',
+    version='0.2.0',
     zip_safe=False,
 )
