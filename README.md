@@ -33,5 +33,12 @@ UPackage.preprocess_assets("some/path/to/my/content")
 UPackage.generate_package("some/path/to/my/content", "output.unitypackage")
 ```
 
+## Command Line Access
+The tool also supports CLI access:
+```bash
+upackage some/path/to/my/content output.unitypackage
+```
+
+
 ## MetaFiles
 *.meta files will be generated if they do not exist for files & folders.
