@@ -5,6 +5,7 @@ import yaml
 import tempfile
 import tarfile
 import logging
+import hashlib
 import re
 from shutil import copyfile
 from shutil import rmtree
@@ -17,28 +18,29 @@ class UPackage:
 
     @staticmethod
     def preprocess_assets(assets_root):
-        UPackage._preprocess_files_in_path(assets_root)
+        UPackage._preprocess_files_in_path(assets_root, "./")
 
     @staticmethod
-    def _preprocess_files_in_path(asset_path):
+    def _preprocess_files_in_path(assets_root, relative_path):
+        asset_path = os.path.join(assets_root, relative_path)
+
         logging.info("Process files in directory: {0}".format(asset_path))
 
         # Process root folder...
-        UPackage._process_file(asset_path)
+        UPackage._process_file(assets_root, relative_path)
 
         # Process contents...
         for path in os.listdir(asset_path):
-            full_path = os.path.join(asset_path, path)
+            child_relative_path = os.path.join(relative_path, path)
 
-            if os.path.isdir(full_path):
-                UPackage._process_file(full_path)
-                UPackage._preprocess_files_in_path(full_path)
+            if os.path.isdir(child_relative_path):
+                UPackage._preprocess_files_in_path(assets_root, child_relative_path)
 
-            if os.path.isfile(full_path):
-                if full_path.endswith(".meta"):
+            if os.path.isfile(child_relative_path):
+                if child_relative_path.endswith(".meta"):
                     continue
                 else:
-                    UPackage._process_file(full_path)
+                    UPackage._process_file(assets_root, relative_path)
 
     @staticmethod
     def _get_file_path_no_extensions(file_path):
@@ -50,24 +52,29 @@ class UPackage:
         return "{0}.meta".format(file_path)
 
     @staticmethod
-    def _process_file(file_path):
-        logging.info("Processing file: {0}".format(file_path))
-        meta_file_path = UPackage._get_asset_meta_path(file_path)
+    def _process_file(assets_root, relative_file_path):
+        logging.info("Processing file: {0}".format(relative_file_path))
+        full_file_path = os.path.normpath(os.path.join(assets_root, relative_file_path))
+        full_meta_file_path = UPackage._get_asset_meta_path(full_file_path)
 
-        if not os.path.isfile(meta_file_path):
-            UPackage._generate_meta_file(meta_file_path)
+        if not os.path.isfile(full_meta_file_path):
+            UPackage._generate_meta_file(full_meta_file_path, relative_file_path)
 
     @staticmethod
-    def _generate_meta_file(meta_file_path):
-        logging.info("Generate meta file at: {0}".format(meta_file_path))
+    def _generate_meta_file(full_meta_file_path, relative_file_path):
+        logging.info("Generate meta file at: {0}".format(full_meta_file_path))
 
         with open(UPackage._get_metafile_template_path()) as file:
             contents = file.read()
-            contents = contents.replace("{guid}", str(uuid.uuid4()).replace('-', ''))
+            contents = contents.replace("{guid}", UPackage._get_deterministic_guid(relative_file_path))
             contents = contents.replace("{timeCreated}", str(int(time.time())))
 
-            with open(meta_file_path, "w") as write_file_handle:
+            with open(full_meta_file_path, "w") as write_file_handle:
                 write_file_handle.write(contents)
+
+    @staticmethod
+    def _get_deterministic_guid(file_path):
+        return hashlib.md5(str.encode(file_path)).hexdigest()
 
     @staticmethod
     def _get_metafile_template_path():
