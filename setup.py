@@ -48,6 +48,6 @@ setup(
     setup_requires=setup_requirements,
     tests_require=test_requirements,
     url='https://github.com/AgeOfLearning/upackage',
-    version='0.3.0',
+    version='0.3.1',
     zip_safe=False,
 )
