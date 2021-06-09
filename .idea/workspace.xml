@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7993c577-6b0a-41e7-894d-171afad0ef7d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/upackage/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/upackage/__main__.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>meta_file_path</find>
+      <find>open</find>
+      <find>generate_package</find>
+      <find>output_path</find>
+      <find>0.</find>
+      <find>entry</find>
+      <find>preprocess_assets</find>
+      <find>metafile_template_path</find>
+      <find>determinis</find>
+      <find>assets</find>
+      <find>full_path</find>
+      <find>_preprocess_files_in_path</find>
+      <find>_process_file</find>
+      <find>asset_path</find>
+      <find>_generate_meta_file</find>
+      <find>_get_asset_meta_path</find>
+      <find>assets_root</find>
+      <find>&quot;assets&quot;</find>
+      <find>DEFAULT_UNITY_ROOT_PATH</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
+  </component>
+  <component name="ProjectId" id="1tghOkd3qxFI0QnDB7csS2Y8r8G" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="__main__" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="upackage" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../multiplayer-sdk-networking/" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/upackage/__main__.py" />
+      <option name="PARAMETERS" value="UnityProjects\Multiplayer.Networking\Assets\Multiplayer.Networking Output\test.unitypackage" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.__main__" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7993c577-6b0a-41e7-894d-171afad0ef7d" name="Default Changelist" comment="" />
+      <created>1559343955814</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1559343955814</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Added command line support to the upackage tool. Updating travis keys">
+      <created>1601514273681</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1601514273681</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Travis ci deployment keys">
+      <created>1601514744793</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1601514744793</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Bump up version to 0.2.1">
+      <created>1601514771998</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1601514771998</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Travis CI file update, version bump up to 0.2.2">
+      <created>1601515049339</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1601515049339</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Yet another token encrypt update">
+      <created>1601515313480</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1601515313480</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fixing cli">
+      <created>1602525948014</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1602525948014</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Updating to 0.3.0 - now using deterministic guids based on the file path">
+      <created>1603244228165</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1603244228165</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added command line support to the upackage tool. Updating travis keys" />
+    <MESSAGE value="Travis ci deployment keys" />
+    <MESSAGE value="Bump up version to 0.2.1" />
+    <MESSAGE value="Travis CI file update, version bump up to 0.2.2" />
+    <MESSAGE value="Yet another token encrypt update" />
+    <MESSAGE value="Fixing cli" />
+    <MESSAGE value="Updating to 0.3.0 - now using deterministic guids based on the file path" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating to 0.3.0 - now using deterministic guids based on the file path" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>os.path.join(assets_root, &quot;./&quot;)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>relative_file_path</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>os.path.join(assets_root, relative_file_path)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>assets_root</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>os.path.abspath(meta_file_path)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>os.path.abspath(os.path.curdir)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>os.path.normpath(os.path.curdir)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>os.path.curdir</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>from upackage.upackage import UPackage</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+</project>
