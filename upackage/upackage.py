@@ -32,15 +32,16 @@ class UPackage:
         # Process contents...
         for path in os.listdir(asset_path):
             child_relative_path = os.path.join(relative_path, path)
+            child_absolute_path = os.path.join(assets_root, child_relative_path)
 
-            if os.path.isdir(child_relative_path):
+            if os.path.isdir(child_absolute_path):
                 UPackage._preprocess_files_in_path(assets_root, child_relative_path)
 
-            if os.path.isfile(child_relative_path):
+            if os.path.isfile(child_absolute_path):
                 if child_relative_path.endswith(".meta"):
                     continue
                 else:
-                    UPackage._process_file(assets_root, relative_path)
+                    UPackage._process_file(assets_root, child_relative_path)
 
     @staticmethod
     def _get_file_path_no_extensions(file_path):
